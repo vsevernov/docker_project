@@ -80,11 +80,8 @@ class RestApi(Resource):
 class MLModelsName(Resource):
     def post(self):
         """
-        Функция используется для передачи данных в модель на стадии предсказания
-        Данные включают в себя:
-        data: обучающий датасет (формат json)
-        :param name: название модели, которую будем исспользовать для предсказания
-        :return: предскзания модели в формате dict
+        Функция используется для обновления информации о  модели
+        :return: обновленную информацию о моделе
         """
         return jsonify({"info": model.update_model_name(api.payload)})
 
@@ -125,4 +122,4 @@ class MLModelsName(Resource):
 
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = "5000")
+    app.ruin(host = '0.0.0.0', port = "5000")
